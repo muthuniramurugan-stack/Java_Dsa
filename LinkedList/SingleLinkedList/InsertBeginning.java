@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SingleLinkedList;
 
 import java.util.Scanner;
 
@@ -12,16 +12,15 @@ class Node {
     }
 }
 
-class SearchElement {
+public class InsertBeginning {
     public static void main(String[] args) {
-        int target = 4;
         Scanner scan = new Scanner(System.in);
-        System.out.print("Enter the number of Nodes");
+        System.out.print("Enter the Number Of Node");
         int n = scan.nextInt();
         Node head = null;
         Node current = null;
         for (int i = 0; i < n; i++) {
-            System.out.print("Enter the value: ");
+            System.out.print("Enter the values: ");
             int value = scan.nextInt();
             Node newnode = new Node(value);
             if (head == null) {
@@ -34,12 +33,20 @@ class SearchElement {
         }
         current = head;
         while (current != null) {
-            if (current.data == target) {
-                System.out.println("ElementFound");
-                break;
-            } else {
-                current = current.next;
-            }
+            System.out.print(current.data + "->");
+            current = current.next;
         }
+        System.out.print("null");
+        System.out.print("Enter the value to be generated first");
+        int val = scan.nextInt();
+        Node n1 = new Node(val);
+        n1.next = head;
+        head = n1;
+        current = head;
+        while (current != null) {
+            System.out.print(current.data + "->");
+            current = current.next;
+        }
+        System.out.print("null");
     }
 }

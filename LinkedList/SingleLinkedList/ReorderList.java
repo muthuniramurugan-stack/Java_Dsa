@@ -1,5 +1,6 @@
-
-package LinkedList;
+// input: 1 → 2 → 3 → 4 → 5
+// output: 1 → 5 → 2 → 4 → 3 → null
+package LinkedList.SingleLinkedList;
 import java.util.Scanner;
 class Node{
     int data;
@@ -9,7 +10,7 @@ class Node{
         this.next=null;
     }
 }
-public class Traversal {
+public class ReorderList {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the number of Nodes");
@@ -34,5 +35,26 @@ public class Traversal {
             current=current.next;
         }
         System.out.println("null"); 
+        current=head;
+        while(current!=null && current.next!=null){
+            Node prev = null;
+            Node tail = head;
+            while(tail.next!=null){
+                prev=tail;
+                tail=tail.next;
+            }
+            if(prev!=null){
+                prev.next=null;
+            }
+            tail.next=current.next;
+            current.next=tail;
+            current=tail.next;
+        }
+         current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
     }
 }

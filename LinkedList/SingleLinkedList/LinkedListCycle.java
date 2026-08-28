@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SingleLinkedList;
 
 import java.util.Scanner;
 
@@ -12,15 +12,15 @@ class Node {
     }
 }
 
-public class InsertEnd {
+public class LinkedListCycle {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Enter the Number Of Node");
+        System.out.print("Enter the number of Nodes");
         int n = scan.nextInt();
         Node head = null;
         Node current = null;
         for (int i = 0; i < n; i++) {
-            System.out.print("Enter the values: ");
+            System.out.print("Enter the value: ");
             int value = scan.nextInt();
             Node newnode = new Node(value);
             if (head == null) {
@@ -31,15 +31,27 @@ public class InsertEnd {
                 current = newnode;
             }
         }
-        System.out.print("Enter the value to be added in the end");
-        int val = scan.nextInt();
-        Node n1 = new Node(val);
-        current.next = n1;
         current = head;
         while (current != null) {
             System.out.print(current.data + "->");
             current = current.next;
         }
-        System.out.print("null");
+        System.out.println("null");
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+        while (slow != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                cycle = true;
+                break;
+            }
+        }
+        if (cycle) {
+            System.out.print("LinkedList Cycle");
+        } else {
+            System.out.println("Not A LinkedList");
+        }
     }
 }

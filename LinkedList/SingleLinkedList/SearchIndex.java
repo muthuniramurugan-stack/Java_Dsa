@@ -1,4 +1,5 @@
-package LinkedList;
+// search the element using the index
+package LinkedList.SingleLinkedList;
 
 import java.util.Scanner;
 
@@ -12,8 +13,9 @@ class Node {
     }
 }
 
-public class ReverseLinkedList {
+public class SearchIndex {
     public static void main(String[] args) {
+        int index = 3;
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the number of Nodes");
         int n = scan.nextInt();
@@ -32,33 +34,19 @@ public class ReverseLinkedList {
             }
         }
         current = head;
-        // before reversing
+        int i = 1;
         while (current != null) {
-            System.out.print(current.data + "->");
+            if (index < 0) {
+                System.out.println("No Elements In LinkedList");
+                break;
+            }
+            if (i == index) {
+                System.out.println(current.data);
+                break;
+            }
+            i++;
             current = current.next;
+
         }
-        System.out.println("null");
-        current = head;
-        Node prev = null;
-        while (current != null) {
-            Node next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-        }
-        // Update head
-        head = prev;
-
-        // Print after reversing
-        System.out.println("After Reversing:");
-
-        current = head;
-
-        while (current != null) {
-            System.out.print(current.data + " -> ");
-            current = current.next;
-        }
-
-        System.out.println("null");
     }
 }

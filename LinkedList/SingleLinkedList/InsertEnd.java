@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SingleLinkedList;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ class Node {
     }
 }
 
-public class InsertBeginning {
+public class InsertEnd {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the Number Of Node");
@@ -31,17 +31,10 @@ public class InsertBeginning {
                 current = newnode;
             }
         }
-        current = head;
-        while (current != null) {
-            System.out.print(current.data + "->");
-            current = current.next;
-        }
-        System.out.print("null");
-        System.out.print("Enter the value to be generated first");
+        System.out.print("Enter the value to be added in the end");
         int val = scan.nextInt();
         Node n1 = new Node(val);
-        n1.next = head;
-        head = n1;
+        current.next = n1;
         current = head;
         while (current != null) {
             System.out.print(current.data + "->");

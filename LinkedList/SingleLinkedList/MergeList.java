@@ -1,5 +1,5 @@
 // Merge Two Sorted Lists
-package LinkedList;
+package LinkedList.SingleLinkedList;
 
 import java.util.Scanner;
 

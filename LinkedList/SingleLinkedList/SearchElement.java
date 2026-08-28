@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SingleLinkedList;
 
 import java.util.Scanner;
 
@@ -12,8 +12,9 @@ class Node {
     }
 }
 
-public class LinkedListCycle {
+class SearchElement {
     public static void main(String[] args) {
+        int target = 4;
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the number of Nodes");
         int n = scan.nextInt();
@@ -33,25 +34,12 @@ public class LinkedListCycle {
         }
         current = head;
         while (current != null) {
-            System.out.print(current.data + "->");
-            current = current.next;
-        }
-        System.out.println("null");
-        Node slow = head;
-        Node fast = head;
-        boolean cycle = false;
-        while (slow != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if (slow == fast) {
-                cycle = true;
+            if (current.data == target) {
+                System.out.println("ElementFound");
                 break;
+            } else {
+                current = current.next;
             }
-        }
-        if (cycle) {
-            System.out.print("LinkedList Cycle");
-        } else {
-            System.out.println("Not A LinkedList");
         }
     }
 }
