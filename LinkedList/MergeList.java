@@ -1,14 +1,18 @@
 // Merge Two Sorted Lists
 package LinkedList;
+
 import java.util.Scanner;
+
 class Node {
     int data;
     Node next;
+
     Node(int data) {
         this.data = data;
         this.next = null;
     }
 }
+
 public class MergeList {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
