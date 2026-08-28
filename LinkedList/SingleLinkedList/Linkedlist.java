@@ -1,4 +1,5 @@
 // LinkedList using prebuilt class
+package LinkedList.SingleLinkedList;
 import java.util.LinkedList;
 import java.util.Scanner;
 class Linkedlist{
