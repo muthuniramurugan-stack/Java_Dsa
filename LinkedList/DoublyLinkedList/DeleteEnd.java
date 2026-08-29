@@ -1,4 +1,3 @@
-// insert the element in the begining of the Linkedlist
 package LinkedList.DoublyLinkedList;
 import java.util.Scanner;
 class Node {
@@ -12,7 +11,7 @@ class Node {
         this.prev = null;
     }
 }
-public class InsertBeginning {
+public class DeleteEnd {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter the Number of Nodes");
@@ -32,26 +31,22 @@ public class InsertBeginning {
                 current = newnode;
             }
         }
-
-        System.out.println("Forward");
         current = head;
         while (current != null) {
             System.out.print(current.data + "<->");
             current = current.next;
         }
+        System.out.println("null");
+        current=head;
+        while(current.next!=null){
+            current=current.next;
+        }
+        current.prev.next=null;
         current = head;
-        System.out.print("Enter the value to added");
-        int val = scan.nextInt();
-        Node n1 = new Node(val);
-       n1.prev=null;
-       n1.next=head;
-       head.prev=n1;
-       head=n1;
-       current=head;
         while (current != null) {
             System.out.print(current.data + "<->");
             current = current.next;
         }
-
+        System.out.println("null");
     }
 }

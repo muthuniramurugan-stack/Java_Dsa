@@ -41,7 +41,7 @@ public class DeleteBegining {
             current = current.next;
         }
         System.out.println("null");
-        current = head;
+        current = head; 
         if (current.next != null) {
             head = current.next;
             current = current.next;
