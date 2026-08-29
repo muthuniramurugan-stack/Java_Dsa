@@ -34,12 +34,12 @@ public class circularlist {
             }
         }
         System.out.println("Circular LinkedList: ");
-        if(head!=null){
-            Node current=head;
-            do{
-                System.out.print(current.data+"->");
-                current=current.next;
-            }while(current!=head);
+        if (head != null) {
+            Node current = head;
+            do {
+                System.out.print(current.data + "->");
+                current = current.next;
+            } while (current != head);
             System.out.println("(back to head)");
         }
     }
