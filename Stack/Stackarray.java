@@ -1,34 +1,40 @@
+// implement stack using array
 package Stack;
 
 public class Stackarray {
     int size;
-    int [] stack;
+    int[] stack;
     int top = -1;
-    Stackarray(){
+
+    Stackarray() {
         size = 100;
         stack = new int[size];
     }
-    void push(int data){
-        if(top==size-1){
+
+    void push(int data) { // inserts element
+        if (top == size - 1) {
             throw new RuntimeException("Stack Overflow");
         }
         top++;
-        stack[top]=data;
+        stack[top] = data;
     }
-    int pop(){
+
+    int pop() { // removes the top element
         return stack[top--];
     }
-    int peek(){
+
+    int peek() { // look at the top of the element and it doesn't remove the element
         return stack[top];
     }
-    int isEmpty(){
-        if(top==-1){
+
+    int isEmpty() { // checks if the stack is empty or not
+        if (top == -1) {
             return -1;
-        }else{
+        } else {
             return 0;
         }
     }
-   
+
     public static void main(String[] args) {
         Stackarray stack = new Stackarray();
         stack.push(10);
