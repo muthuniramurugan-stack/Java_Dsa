@@ -1,4 +1,5 @@
-package DoublyLinkedList;
+package LinkedList.DoublyLinkedList;
+
 import java.util.Scanner;
 
 class Node {
@@ -12,9 +13,10 @@ class Node {
         this.prev = null;
     }
 }
+
 public class DeleteBegining {
     public static void main(String[] args) {
-  Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.print("Enter the Number of Nodes");
         int n = scan.nextInt();
         Node head = null;
@@ -26,9 +28,9 @@ public class DeleteBegining {
             if (head == null) {
                 head = newnode;
                 current = newnode;
-            } else {    
+            } else {
                 current.next = newnode;
-                newnode.prev=current;
+                newnode.prev = current;
                 current = newnode;
             }
         }
@@ -39,7 +41,21 @@ public class DeleteBegining {
             current = current.next;
         }
         System.out.println("null");
-        
+        current = head;
+        if (current.next != null) {
+            head = current.next;
+            current = current.next;
+            current.prev = null;
+            current = head;
+        } else {
+            head = null;
+            current = head;
         }
-    }
 
+        while (current != null) {
+            System.out.print(current.data + "<->");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+}
