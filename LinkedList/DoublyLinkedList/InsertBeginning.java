@@ -33,12 +33,11 @@ public class InsertBeginning {
             }
         }
 
-        System.out.println("Forward");
-        current = head;
         while (current != null) {
             System.out.print(current.data + "<->");
             current = current.next;
         }
+        System.out.print("null");
         current = head;
         System.out.print("Enter the value to added");
         int val = scan.nextInt();
