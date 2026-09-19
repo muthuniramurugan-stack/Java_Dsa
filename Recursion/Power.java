@@ -1,0 +1,18 @@
+// 2^5=32  (i.e: 2*2*2*2*2) power 5 says that 2 is multiplied 5 times
+package Recursion;
+
+public class Power {
+    public static void main(String[] args) {
+        int base = 2;
+        int exp = 5;
+        int res = power(base, exp);
+        System.err.print(res);
+    }
+
+    static int power(int base, int exp) {
+        if (exp == 0) {
+            return 1;
+        }
+        return base * power(base, exp - 1);
+    }
+}
